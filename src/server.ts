@@ -43,6 +43,7 @@ import fs from "fs";
       return res.status(400).send("Something went wrong");
     }
 
+    // used below code snippet from https://gist.github.com/tangxinfa/ceaf31d8c14231617cf05dc7a6b2555c
     var stream = fs.createReadStream(filteredImagePath);
     stream.pipe(res).once("close", function () {
       stream.destroy();
